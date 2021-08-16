@@ -39,7 +39,7 @@ useradd -m lucasgarciabertaina
 echo lucasgarciabertaina:20421846619Lg | chpasswd
 usermod -aG libvirt lucasgarciabertaina
 
-echo "lucasgarciabertaina ALL=(ALL) ALL" >> /etc/sudoers.d/ermanno
+echo "lucasgarciabertaina ALL=(ALL) ALL" >> /etc/sudoers.d/lucasgarciabertaina
 
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
