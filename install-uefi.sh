@@ -6,10 +6,10 @@ sed -i '177s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=es_AR.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=es" >> /etc/vconsole.conf
-echo "lgb" >> /etc/hostname
+echo "arch" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
-echo "127.0.1.1 lgb.localdomain lgb" >> /etc/hosts
+echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:20421846619Lg | chpasswd
 
 # You can add xorg to the installation packages, I usually add it at the DE or WM install script
@@ -31,11 +31,11 @@ systemctl enable libvirtd
 systemctl enable firewalld
 systemctl enable acpid
 
-useradd -m lucasgarciabertaina
-echo lucasgarciabertaina:20421846619Lg | chpasswd
-usermod -aG libvirt lucasgarciabertaina
+useradd -m lucasGB
+echo lucasGB:20421846619Lg | chpasswd
+usermod -aG libvirt lucasGB
 
-echo "lucasgarciabertaina ALL=(ALL) ALL" >> /etc/sudoers.d/lucasgarciabertaina
+echo "lucasGB ALL=(ALL) ALL" >> /etc/sudoers.d/lucasGB
 
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
