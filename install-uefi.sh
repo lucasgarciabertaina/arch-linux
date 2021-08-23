@@ -31,11 +31,11 @@ systemctl enable libvirtd
 systemctl enable firewalld
 systemctl enable acpid
 
-useradd -m lucasGB
-echo lucasGB:20421846619Lg | chpasswd
-usermod -aG libvirt lucasGB
+useradd -m lucas
+echo lucas:20421846619Lg | chpasswd
+usermod -aG libvirt lucas
 
-echo "lucasGB ALL=(ALL) ALL" >> /etc/sudoers.d/lucasGB
+echo "lucas ALL=(ALL) ALL" >> /etc/sudoers.d/lucas
 
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
