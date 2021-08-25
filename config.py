@@ -20,8 +20,7 @@ keys = [
              desc='Launches My Terminal'
              ),
          Key([mod, "shift"], "Return",
-             lazy.spawn('rofi -show run'),
-             # lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
+             lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/lb.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
              desc='Run Launcher'
              ),
          Key([mod], "Tab",
@@ -45,27 +44,27 @@ keys = [
              desc='Doom Emacs'
              ),
          ### Switch focus to specific monitor (out of three)
-         Key([mod], "w",
-             lazy.to_screen(0),
-             desc='Keyboard focus to monitor 1'
-             ),
-         Key([mod], "e",
-             lazy.to_screen(1),
-             desc='Keyboard focus to monitor 2'
-             ),
-         Key([mod], "r",
-             lazy.to_screen(2),
-             desc='Keyboard focus to monitor 3'
-             ),
+         #Key([mod], "w",
+         #   lazy.to_screen(0),
+         #  desc='Keyboard focus to monitor 1'
+         #    ),
+         #Key([mod], "e",
+         #    lazy.to_screen(1),
+         #    desc='Keyboard focus to monitor 2'
+         #    ),
+         #Key([mod], "r",
+         #    lazy.to_screen(2),
+         #    desc='Keyboard focus to monitor 3'
+         #    ),
          ### Switch focus of monitors
-         Key([mod], "period",
-             lazy.next_screen(),
-             desc='Move focus to next monitor'
-             ),
-         Key([mod], "comma",
-             lazy.prev_screen(),
-             desc='Move focus to prev monitor'
-             ),
+         #Key([mod], "period",
+         #    lazy.next_screen(),
+         #    desc='Move focus to next monitor'
+         #    ),
+         #Key([mod], "comma",
+         #    lazy.prev_screen(),
+         #    desc='Move focus to prev monitor'
+         #    ),
          ### Treetab controls
           Key([mod, "shift"], "h",
              lazy.layout.move_left(),
@@ -121,93 +120,54 @@ keys = [
              desc='toggle fullscreen'
              ),
          ### Stack controls
-         Key([mod, "shift"], "Tab",
-             lazy.layout.rotate(),
-             lazy.layout.flip(),
-             desc='Switch which side main pane occupies (XmonadTall)'
-             ),
-          Key([mod], "space",
-             lazy.layout.next(),
-             desc='Switch window focus to other pane(s) of stack'
-             ),
-         Key([mod, "shift"], "space",
-             lazy.layout.toggle_split(),
-             desc='Toggle between split and unsplit sides of stack'
-             ),
+         #Key([mod, "shift"], "Tab",
+         #    lazy.layout.rotate(),
+         #    lazy.layout.flip(),
+         #    desc='Switch which side main pane occupies (XmonadTall)'
+         #    ),
+         #Key([mod], "space",
+         #    lazy.layout.next(),
+         #    desc='Switch window focus to other pane(s) of stack'
+         #    ),
+         #Key([mod, "shift"], "space",
+         #    lazy.layout.toggle_split(),
+         #    desc='Toggle between split and unsplit sides of stack'
+         #    ),
          # Emacs programs launched using the key chord CTRL+e followed by 'key'
-         KeyChord(["control"],"e", [
-             Key([], "e",
-                 lazy.spawn("emacsclient -c -a 'emacs'"),
-                 desc='Launch Emacs'
-                 ),
-             Key([], "b",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(ibuffer)'"),
-                 desc='Launch ibuffer inside Emacs'
-                 ),
-             Key([], "d",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(dired nil)'"),
-                 desc='Launch dired inside Emacs'
-                 ),
-             Key([], "i",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(erc)'"),
-                 desc='Launch erc inside Emacs'
-                 ),
-             Key([], "m",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(mu4e)'"),
-                 desc='Launch mu4e inside Emacs'
-                 ),
-             Key([], "n",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(elfeed)'"),
-                 desc='Launch elfeed inside Emacs'
-                 ),
-             Key([], "s",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(eshell)'"),
-                 desc='Launch the eshell inside Emacs'
-                 ),
-             Key([], "v",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(+vterm/here nil)'"),
-                 desc='Launch vterm inside Emacs'
-                 )
-         ]),
-         # Dmenu scripts launched using the key chord SUPER+p followed by 'key'
-         KeyChord([mod], "p", [
-             Key([], "e",
-                 lazy.spawn("./dmscripts/dm-confedit"),
-                 desc='Choose a config file to edit'
-                 ),
-             Key([], "i",
-                 lazy.spawn("./dmscripts/dm-maim"),
-                 desc='Take screenshots via dmenu'
-                 ),
-             Key([], "k",
-                 lazy.spawn("./dmscripts/dm-kill"),
-                 desc='Kill processes via dmenu'
-                 ),
-             Key([], "l",
-                 lazy.spawn("./dmscripts/dm-logout"),
-                 desc='A logout menu'
-                 ),
-             Key([], "m",
-                 lazy.spawn("./dmscripts/dm-man"),
-                 desc='Search manpages in dmenu'
-                 ),
-             Key([], "o",
-                 lazy.spawn("./dmscripts/dm-bookman"),
-                 desc='Search your qutebrowser bookmarks and quickmarks'
-                 ),
-             Key([], "r",
-                 lazy.spawn("./dmscripts/dm-reddit"),
-                 desc='Search reddit via dmenu'
-                 ),
-             Key([], "s",
-                 lazy.spawn("./dmscripts/dm-websearch"),
-                 desc='Search various search engines via dmenu'
-                 ),
-             Key([], "p",
-                 lazy.spawn("passmenu"),
-                 desc='Retrieve passwords with dmenu'
-                 )
-         ])
+         #KeyChord(["control"],"e", [
+         #    Key([], "e",
+         #        lazy.spawn("emacsclient -c -a 'emacs'"),
+         #        desc='Launch Emacs'
+         #        ),
+         #    Key([], "b",
+         #        lazy.spawn("emacsclient -c -a 'emacs' --eval '(ibuffer)'"),
+         #        desc='Launch ibuffer inside Emacs'
+         #        ),
+         #    Key([], "d",
+         #        lazy.spawn("emacsclient -c -a 'emacs' --eval '(dired nil)'"),
+         #        desc='Launch dired inside Emacs'
+         #        ),
+         #    Key([], "i",
+         #        lazy.spawn("emacsclient -c -a 'emacs' --eval '(erc)'"),
+         #        desc='Launch erc inside Emacs'
+         #        ),
+         #    Key([], "m",
+         #        lazy.spawn("emacsclient -c -a 'emacs' --eval '(mu4e)'"),
+         #        desc='Launch mu4e inside Emacs'
+         #        ),
+         #    Key([], "n",
+         #        lazy.spawn("emacsclient -c -a 'emacs' --eval '(elfeed)'"),
+         #        desc='Launch elfeed inside Emacs'
+         #        ),
+         #    Key([], "s",
+         #        lazy.spawn("emacsclient -c -a 'emacs' --eval '(eshell)'"),
+         #        desc='Launch the eshell inside Emacs'
+         #        ),
+         #    Key([], "v",
+         #        lazy.spawn("emacsclient -c -a 'emacs' --eval '(+vterm/here nil)'"),
+         #        desc='Launch vterm inside Emacs'
+         #        )
+         #]),
 ]
 
 group_names = [("WWW", {'layout': 'monadtall'}),
@@ -549,14 +509,6 @@ def switch_screens(qtile):
     i = qtile.screens.index(qtile.current_screen)
     group = qtile.screens[i - 1].group
     qtile.current_screen.set_group(group)
-
-mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front())
-]
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
