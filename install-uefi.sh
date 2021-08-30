@@ -17,7 +17,7 @@ echo root:20421846619Lg | chpasswd
 
 pacman -S networkmanager network-manager-applet dialog wpa_supplicant base-devel linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack openssh rsync reflector acpi acpi_call virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns acpid ntfs-3g terminus-font wget
 
-pacman -S xorg xorg-server xorg-xinit xf86-video-intel mesa nvidia nvidia-utils nvidia-settings
+pacman -S xorg xorg-server xorg-xinit xf86-video-intel mesa nvidia nvidia-utils nvidia-settings arandr
 
 systemctl enable NetworkManager
 systemctl enable bluetooth
